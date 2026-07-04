@@ -23,6 +23,29 @@ All project architecture-related work must use persistent storage and retrieval.
 - After architecture-related changes, check that the persisted architecture documents still match the code and intended design.
 - Keep architecture documentation concise, current, and linked to concrete files or modules when those exist.
 
+## Core Delivery Workflow Constraint
+
+For demand design, feature development, testing, bug work, and architecture improvement, use this project-level main workflow:
+
+```text
+/ask-matt -> /grill-with-docs -> /to-prd -> /to-issues -> /prototype -> /triage -> /tdd -> /diagnosing-bugs -> /improve-codebase-architecture -> /handoff
+```
+
+Treat the sequence as a required workflow gate for substantial project work, not a loose recommendation.
+
+- Start with `/ask-matt` to route the request and confirm whether the full flow, an on-ramp, or a smaller path applies.
+- Use `/grill-with-docs` before committing to implementation scope so requirements, domain terms, and architecture decisions are clarified and persisted.
+- Use `/to-prd` to turn the clarified demand into a durable PRD when the work is larger than a single obvious change.
+- Use `/to-issues` to break approved PRDs or plans into independently-grabbable vertical slices on the issue tracker.
+- Use `/prototype` when a design question needs a runnable answer, then keep only the learned decision and delete or absorb throwaway code.
+- Use `/triage` for raw incoming issues, external requests, and bug reports. Do not re-triage issues already produced by `/to-issues` unless new information makes them ambiguous.
+- Use `/tdd` for implementation: confirm the test seam, write a failing behavior test first, make it pass, then repeat one vertical slice at a time.
+- Use `/diagnosing-bugs` for bugs, regressions, flakes, and performance issues; build a tight red-capable feedback loop before hypothesizing.
+- Use `/improve-codebase-architecture` when implementation, tests, or diagnosis reveal shallow modules, missing seams, hidden coupling, or architecture friction.
+- Use `/handoff` before changing sessions, compacting context, delegating work, or leaving unfinished reasoning that another agent must continue.
+
+If a step is not applicable, explicitly state why in the working notes, issue, PRD, commit message, or handoff. Do not silently skip steps that affect requirements, tests, architecture, or cross-session continuity.
+
 ## Agent skills
 
 ### Issue tracker
