@@ -22,3 +22,17 @@ All project architecture-related work must use persistent storage and retrieval.
 
 - After architecture-related changes, check that the persisted architecture documents still match the code and intended design.
 - Keep architecture documentation concise, current, and linked to concrete files or modules when those exist.
+
+## Agent skills
+
+### Issue tracker
+
+Issues and PRDs are tracked in GitHub Issues for `EnochLi15/TradeMiner`; use the `gh` CLI from this clone. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Use the default `mattpocock/skills` triage label vocabulary unchanged. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Use a single-context domain documentation layout for this repository. See `docs/agents/domain.md`.
